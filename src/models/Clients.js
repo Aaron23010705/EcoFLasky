@@ -45,4 +45,4 @@ timestamps:true,
 strict:true
 })
 
-export default model ("Clients", clientsSchema );
+export default model ("Clients", clientSchema );
