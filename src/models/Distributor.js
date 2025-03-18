@@ -26,7 +26,8 @@ const distributorSchema = new Schema({
         maxLength: 100
     },
     affiliationDate: {
-        type: String
+        type: String,
+        require: true
     }
 },{
     timestamps: true,
