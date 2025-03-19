@@ -15,7 +15,7 @@ import ProductsModel from "../models/Products.js";
 
 productsController.getProducts = async (req,res) => {
 
-    const products = await ProductsModel.find();
+    const products = await ProductsModel.find().populate("ditributorId").populate("suplierId").populate("categoryId");
     res.json(products)
    
 }

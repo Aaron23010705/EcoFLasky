@@ -10,22 +10,22 @@ import Rating from "../models/Ratings.js";
 
 RatingController.getRating = async (req,res) => {
 
-    const Ratings = await Rating.find();
+    const Ratings = await Rating.find().populate("userId");
     res.json(Ratings)
    
 }
 
 RatingController.insertRating = async (req,res) => {
 
-    const {UserId, rating, comment} = req.body;
-    const newRating = new Rating({UserId, rating, comment})
+    const {userId, rating, comment} = req.body;
+    const newRating = new Rating({userId, rating, comment})
     await newRating.save();
     res.json ({message: "Rating saved"});
 }
 
 RatingController.updateRating = async (req,res) => {
-    const {UserId, rating, comment} = req.body;
-     const updatedRating = await Rating.findByIdAndUpdate(req.params.id,{UserId, rating, comment} , {new:true})
+    const {userId, rating, comment} = req.body;
+     const updatedRating = await Rating.findByIdAndUpdate(req.params.id,{userId, rating, comment} , {new:true})
      res.json ({message: "Rating upsdated"});
 
 }
