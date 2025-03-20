@@ -3,12 +3,13 @@ import categoryModel from "../models/category.js"
 
 categoryController.getCategory = async (req, res) => {
     const category = await categoryModel.find();
-    res.json(Distributor)
+    res.json(category)
 }
 
 categoryController.insertCategory = async (req, res) => {
     const{name, description} = req.body;
     const newCategory = new categoryModel({name, description});
+    await newCategory.save()
     res.json({message: "Category saved"});
 }
 

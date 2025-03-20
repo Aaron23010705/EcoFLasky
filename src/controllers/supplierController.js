@@ -2,7 +2,7 @@ const supplierController = {};
 import supplierModel from "../models/supplierM.js";
 
 supplierController.getSupplier = async (req, res) => {
-    const supplier = await supplieModel.find();
+    const supplier = await supplierModel.find();
     res.json(supplier)
 }
 
@@ -23,7 +23,7 @@ supplierController.updateSupplier = async (req, res) => {
 
 
 supplierController.deleteSupplier= async (req, res) => {
-    await supplieModel.findByIdAndDelete(req.params.id);
+    await supplierModel.findByIdAndDelete(req.params.id);
     res.json({message: "Supplier deleted"});
 
 }
