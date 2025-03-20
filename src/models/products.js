@@ -38,7 +38,7 @@ distributorId:{
 
 suplierId:{
     type: Schema.Types.ObjectId,
-    ref: "Suplier",
+    ref: "Supplier",
     require:true
 },
 categoryId:{

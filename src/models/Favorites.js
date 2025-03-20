@@ -14,7 +14,7 @@ const FavoriteSchema = new Schema(
         ref: "Clients",
         require:true
 },
-ProductId: {
+productId: {
     type: Schema.Types.ObjectId,
     ref: "Products",
     require:true

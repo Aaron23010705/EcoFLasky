@@ -5,7 +5,7 @@ import movementsModel from "../models/Movements.js";
 
 //S E L E C T
 movementsController.getMovements = async (req, res) => {
-    const movements = await movementsModel.find().populate("UsersID");
+    const movements = await movementsModel.find().populate("userId");
     res.json(movements)
 }
 
