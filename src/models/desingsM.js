@@ -2,7 +2,7 @@ import {Schema, model} from "mongoose";
 
 const desingsSchema = new Schema({
     userId: {
-        type: Schema.type.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Clients",
         require: true
     },
